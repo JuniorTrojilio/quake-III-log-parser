@@ -1,0 +1,12 @@
+{
+  "name": "quake-parse-log",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Challenge proposed by cloudwalk on interview",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
