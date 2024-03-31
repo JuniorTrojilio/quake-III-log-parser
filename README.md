@@ -95,3 +95,50 @@ The project should implement the following functionalities:
 # Plus
 
 - [x] Generate a report of deaths grouped by death cause for each match.
+
+### Example proposed
+
+```JSON
+{
+  "game-1": {
+  "kills_by_means": {
+    "MOD_SHOTGUN": 10,
+    "MOD_RAILGUN": 2,
+    "MOD_GAUNTLET": 1,
+    ...
+  }
+}
+```
+
+### Solution provided
+
+```JSON
+{
+    "game_19": {
+      "total_kills": 95,
+      "players": [
+        "Isgalamido",
+        "Oootsimo",
+        "Dono da Bola",
+        "Assasinu Credi",
+        "Zeh",
+        "Mal"
+      ],
+      "kills": {
+        "Mal": 2,
+        "Zeh": 20,
+        "Dono da Bola": 14,
+        "Isgalamido": 14,
+        "Assasinu Credi": 9,
+        "Oootsimo": 10
+      },
+      "kills_by_means": {
+        "MOD_ROCKET": 27,
+        "MOD_ROCKET_SPLASH": 32,
+        "MOD_SHOTGUN": 6,
+        "MOD_RAILGUN": 10,
+        "MOD_MACHINEGUN": 7
+      }
+    }
+  }
+```
