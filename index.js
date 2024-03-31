@@ -21,7 +21,6 @@ function createGame(index) {
     total_kills: 0,
     players: [],
     kills: {},
-    events: [],
   };
   return game;
 }
@@ -30,17 +29,11 @@ function createGame(index) {
 rl.on('line', (line) => {
   if (line.includes('InitGame')) {
     if (generalInfo.gamesAmount > 0) {
-
-      if (!generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].events.includes('successfully_finished')) {
-        generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].events.push('unexpected_close');
-      }
-
       generalInfo.allGames.push(generalInfo.currentGame);
     }
 
     generalInfo.gamesAmount++;
     generalInfo.currentGame = createGame(generalInfo.gamesAmount);
-    generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].events.push('successfully_started');
   }
 
   if (line.includes('ClientUserinfoChanged')) {
@@ -68,10 +61,6 @@ rl.on('line', (line) => {
     if (!generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills[killed]) {
       generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills[killed] = 0;
     }
-  }
-
-  if (line.includes('ShutdownGame')) {
-    generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].events.push('successfully_finished');
   }
 });
 
