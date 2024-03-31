@@ -174,3 +174,16 @@ branch: `feat/events` - Link: [feat/events](https://github.com/JuniorTrojilio/qu
   },
 }
 ```
+
+# Requirements
+
+- NodeJS 18^
+
+## How to run:
+```bash
+pnpm dev
+```
+or
+```bash
+node --watch index.js
+```
