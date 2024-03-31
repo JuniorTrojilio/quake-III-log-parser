@@ -21,6 +21,7 @@ function createGame(index) {
     total_kills: 0,
     players: [],
     kills: {},
+    kills_by_means: {},
   };
   return game;
 }
@@ -48,6 +49,7 @@ rl.on('line', (line) => {
     const [event, action] = line.split('killed');
     const killer = event.split(':')[3].trim();
     const killed = action.split('by')[0].trim();
+    const method = action.split('by')[1].trim();
 
     generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].total_kills++;
 
@@ -61,6 +63,9 @@ rl.on('line', (line) => {
     if (!generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills[killed]) {
       generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills[killed] = 0;
     }
+
+    // [x] - Plus: Generate a report of deaths grouped by death cause for each match
+    generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills_by_means[method] = generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills_by_means[method] ? generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills_by_means[method] + 1 : 1;
   }
 });
 
