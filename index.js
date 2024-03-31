@@ -21,6 +21,7 @@ function createGame(index) {
     total_kills: 0,
     players: [],
     kills: {},
+    ranking: [],
   };
   return game;
 }
@@ -61,6 +62,15 @@ rl.on('line', (line) => {
     if (!generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills[killed]) {
       generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills[killed] = 0;
     }
+
+    // [x] - Create a script that prints a report (grouped information) for each match and a player ranking 
+    generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].ranking = Object.keys(generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills).map((player) => ({
+      player,
+      kills: generalInfo.currentGame[`game_${generalInfo.gamesAmount}`].kills[player],
+    })).sort((a, b) => b.kills - a.kills).map((player, index) => ({
+      ...player,
+      position: index + 1,
+    }));
   }
 });
 
