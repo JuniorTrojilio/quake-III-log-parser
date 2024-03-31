@@ -67,7 +67,7 @@ The project should implement the following functionalities:
 
 # Report
 
-branch: `feat/ranking`
+branch: `feat/ranking` - Link: [feat/ranking](https://github.com/JuniorTrojilio/quake-III-log-parser/tree/feat/ranking)
 
 - [x] - Create a script that prints a report (grouped information) for each match and a player ranking. `Sample not provided`
 
@@ -97,7 +97,7 @@ branch: `feat/ranking`
 
 # Plus
 
-branch: `feat/report-by-death`
+branch: `feat/report-by-death` - Link: [feat/report-by-death](https://github.com/JuniorTrojilio/quake-III-log-parser/tree/feat/report-by-death)
 
 - [x] Generate a report of deaths grouped by death cause for each match.
 
@@ -150,7 +150,7 @@ branch: `feat/report-by-death`
 
 # Extra mile
 
-branch: `feat/events`
+branch: `feat/events` - Link: [feat/events](https://github.com/JuniorTrojilio/quake-III-log-parser/tree/feat/events)
 
 - [x] Some game rounds are not finished on log file (`like round 2` - Has `InitGame` log but not `ShutdownGame`), to observe this behavior, the script implements a simple event system to notify based on log file, when a game round is unexpectedly finished.
 
